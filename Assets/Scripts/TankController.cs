@@ -13,7 +13,13 @@ public class TankController : MonoBehaviour
 
     [SerializeField] float _turnSpeed = 2f;
 
+    [SerializeField] Missile _missile;
+    [SerializeField] ParticleSystem _shootParticles;
+    [SerializeField] AudioClip _shootSound;
+
     Rigidbody _rb = null;
+
+    bool reloading = false;
 
     private void Awake()
     {
@@ -29,8 +35,19 @@ public class TankController : MonoBehaviour
     private void Update()
     {
         if(Input.GetKeyDown(KeyCode.R))
-         {
+        {
             FlipTank();
+        }
+
+        if(reloading == false)
+        {
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                Shoot();
+                _shootParticles.Play();
+                AudioHelper.PlayClip2D(_shootSound, 1f);
+                StartCoroutine(Reload());
+            }
         }
     }
 
@@ -58,6 +75,28 @@ public class TankController : MonoBehaviour
     private void FlipTank()
     {
         transform.rotation = Quaternion.Euler(0, 0, 0);
+    }
+
+    private void Shoot()
+    {
+        if(_missile != null)
+        {
+            Instantiate(_missile, this.gameObject.transform.TransformPoint(Vector3.forward * 1.5f), 
+                new Quaternion(this.gameObject.transform.rotation.x, this.gameObject.transform.rotation.y, this.gameObject.transform.rotation.z, this.gameObject.transform.rotation.w));
+        }
+    }
+
+    private IEnumerator Reload()
+    {
+        float reloadTime = 0.5f;
+        reloading = true;
+
+        while(reloadTime >= 0)
+        {
+            reloadTime -= Time.deltaTime;
+            yield return null;
+        }
+        reloading = false;
     }
     
 }
