@@ -10,7 +10,11 @@ public class Missile : Projectile
     {
         if(otherCollision.gameObject.tag != "Player")
         {
-            Debug.Log(otherCollision.gameObject.name + " has been hit");
+            Health targetHealth = otherCollision.gameObject.GetComponent<Health>();
+            if(targetHealth != null)
+            {
+                targetHealth.TakeDamage(_damageAmount);
+            }
             ImpactFeedback();
             Destroy(gameObject);
         }

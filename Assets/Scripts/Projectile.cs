@@ -8,6 +8,7 @@ public abstract class Projectile : MonoBehaviour
 
     [Header("Base Settings")]
     [SerializeField] protected float TravelSpeed = .001f;
+    [SerializeField] protected int _damageAmount = 1;
     [SerializeField] protected Rigidbody RB;
     [SerializeField] protected ParticleSystem _impactParticles;
     [SerializeField] protected AudioClip _impactSound;

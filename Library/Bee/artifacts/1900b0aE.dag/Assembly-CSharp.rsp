@@ -352,18 +352,14 @@
 "Assets/Scripts/CollectibleBase.cs"
 "Assets/Scripts/Common/AudioHelper.cs"
 "Assets/Scripts/Enemy.cs"
-"Assets/Scripts/HealthIncrease.cs"
-"Assets/Scripts/Inventory.cs"
-"Assets/Scripts/InvincibilityPowerup.cs"
-"Assets/Scripts/Killer.cs"
+"Assets/Scripts/GameController.cs"
+"Assets/Scripts/Health.cs"
+"Assets/Scripts/IDamageable.cs"
 "Assets/Scripts/Missile.cs"
 "Assets/Scripts/Player.cs"
 "Assets/Scripts/PowerUpBase.cs"
 "Assets/Scripts/Projectile.cs"
-"Assets/Scripts/Slower.cs"
-"Assets/Scripts/SpeedIncrease.cs"
 "Assets/Scripts/TankController.cs"
-"Assets/Scripts/Treasure.cs"
 -langversion:9.0
 
 /deterministic
