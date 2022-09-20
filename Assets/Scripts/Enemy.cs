@@ -6,8 +6,6 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     [SerializeField] int _damageAmount = 1;
-    [SerializeField] ParticleSystem _impactParticles;
-    [SerializeField] AudioClip _impactSound;
 
     Rigidbody _rb;
 
@@ -23,21 +21,6 @@ public class Enemy : MonoBehaviour
         if (player != null && playerHealth != null)
         {
             playerHealth.TakeDamage(_damageAmount);
-            ImpactFeedback();
-        }
-    }
-
-    private void ImpactFeedback()
-    {
-        //particles
-        if(_impactParticles != null)
-        {
-            _impactParticles.Play();
-        }
-        //audio. TODO - consider Object Pooling for performance
-        if(_impactSound != null)
-        {
-            AudioHelper.PlayClip2D(_impactSound, 1f);
         }
     }
 

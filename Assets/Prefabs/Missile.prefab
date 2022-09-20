@@ -112,9 +112,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TravelSpeed: 0.005
+  _damageAmount: 1
   RB: {fileID: 6794076752759638199}
   _impactParticles: {fileID: 833673609689063240, guid: b04ec379635676448b1597ff513c0bce, type: 3}
-  _impactSound: {fileID: 8300000, guid: 33294cebcd19aef48a90ba1a002ce5a8, type: 3}
+  _impactSound: {fileID: 8300000, guid: 1d5c4784e8e8f184092d064650203592, type: 3}
   _acceleration: 0.01
 --- !u!54 &6794076752759638199
 Rigidbody:

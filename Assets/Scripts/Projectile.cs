@@ -30,7 +30,7 @@ public abstract class Projectile : MonoBehaviour
         RB.MovePosition(RB.position + moveOffset);
     }
 
-    protected void ImpactFeedback()
+    protected void ImpactParticles()
     {
         //particles
         if (_impactParticles != null)
@@ -38,6 +38,10 @@ public abstract class Projectile : MonoBehaviour
             Instantiate(_impactParticles, this.gameObject.transform.TransformPoint(Vector3.zero), Quaternion.identity);
         }
         //audio. TODO - consider Object Pooling for performance
+    }
+
+    protected void ImpactSound()
+    {
         if (_impactSound != null)
         {
             AudioHelper.PlayClip2D(_impactSound, 1f);

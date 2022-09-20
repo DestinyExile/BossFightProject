@@ -1,0 +1,12 @@
+fileFormatVersion: 2
+guid: 1ad588cb65b560247aa337e18fd7002a
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - burrowMarker: {fileID: 8250269891487618730, guid: 063f33b35a6ef924c8cb140db1052a54, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

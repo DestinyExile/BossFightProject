@@ -15,7 +15,11 @@ public class Missile : Projectile
             {
                 targetHealth.TakeDamage(_damageAmount);
             }
-            ImpactFeedback();
+            else
+            {
+                ImpactSound();
+            }
+            ImpactParticles();
             Destroy(gameObject);
         }
     }
