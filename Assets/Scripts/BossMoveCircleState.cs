@@ -22,7 +22,8 @@ public class BossMoveCircleState : MonoBehaviour, IState
     public void Enter()
     {
         Debug.Log("STATE CHANGE - MoveCircle");
-        timeUntilChangeState = 10f;
+        timeUntilChangeState = 8.5f;
+        startCircle = false;
     }
 
     public void Exit()
@@ -52,7 +53,7 @@ public class BossMoveCircleState : MonoBehaviour, IState
 
         if (timeUntilChangeState <= 0f)
         {
-            _bossStateMachine.ChangeState(_bossStateMachine.MoveBurrow);
+            _bossStateMachine.ChangeState(_bossStateMachine.Stationary);
         }
     }
 
