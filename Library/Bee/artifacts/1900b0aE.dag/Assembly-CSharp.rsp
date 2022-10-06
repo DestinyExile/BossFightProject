@@ -359,6 +359,7 @@
 "Assets/Scripts/Enemy.cs"
 "Assets/Scripts/GameController.cs"
 "Assets/Scripts/Health.cs"
+"Assets/Scripts/HealthBar.cs"
 "Assets/Scripts/IDamageable.cs"
 "Assets/Scripts/IState.cs"
 "Assets/Scripts/Missile.cs"

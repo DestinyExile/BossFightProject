@@ -61,6 +61,7 @@
     <Compile Include="Assets\Scripts\BossMoveCircleState.cs" />
     <Compile Include="Assets\Scripts\Health.cs" />
     <Compile Include="Assets\Scripts\TankController.cs" />
+    <Compile Include="Assets\Scripts\HealthBar.cs" />
     <Compile Include="Assets\Scripts\PowerUpBase.cs" />
     <Compile Include="Assets\Scripts\BossMoveBurrowState.cs" />
     <Compile Include="Assets\Scripts\Common\AudioHelper.cs" />
