@@ -36,7 +36,7 @@ public class BossStationaryState : MonoBehaviour, IState
 
         if (timeUntilChangeState <= 0f)
         {
-            _bossStateMachine.ChangeState(_bossStateMachine.MoveHorizontal);
+            _bossStateMachine.ChangeState(_bossStateMachine.Laser);
         }
     }
 }

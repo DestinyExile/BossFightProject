@@ -6,8 +6,8 @@ using UnityEngine.UI;
 
 public class Health : MonoBehaviour, IDamageable
 {
-    [SerializeField] int _maxHealth = 5;
-    public int MaxHealth
+    [SerializeField] float _maxHealth = 5;
+    public float MaxHealth
     {
         get => _maxHealth;
         set => _maxHealth = value;
@@ -19,10 +19,10 @@ public class Health : MonoBehaviour, IDamageable
     [SerializeField] Material _bossBody;
     [SerializeField] Material _bossTread;
     [SerializeField] Material _bossTurret;
-    [SerializeField] Image damageVignette;
+    [SerializeField] Image damageVignette = null;
 
-    protected int currentHealth;
-    public int CurrentHealth
+    [SerializeField] float currentHealth;
+    public float CurrentHealth
     {
         get => currentHealth;
         set => currentHealth = value;
@@ -96,7 +96,6 @@ public class Health : MonoBehaviour, IDamageable
             _bossBody.DisableKeyword("_EMISSION");
             _bossTread.DisableKeyword("_EMISSION");
             _bossTurret.DisableKeyword("_EMISSION");
-            damageVignette.gameObject.SetActive(false);
         }
         if (damageVignette != null)
         {
