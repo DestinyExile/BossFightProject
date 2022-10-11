@@ -8,6 +8,7 @@ public class BossStationaryState : MonoBehaviour, IState
     BossStateMachine _bossStateMachine;
 
     float timeUntilChangeState;
+    bool usedLasers = false;
 
     public BossStationaryState(BossStateMachine bossStateMachine)
     {
@@ -36,7 +37,16 @@ public class BossStationaryState : MonoBehaviour, IState
 
         if (timeUntilChangeState <= 0f)
         {
-            _bossStateMachine.ChangeState(_bossStateMachine.Laser);
+            if (usedLasers == true)
+            {
+                usedLasers = false;
+                _bossStateMachine.ChangeState(_bossStateMachine.Bullets);
+            }
+            else
+            {
+                usedLasers = true;
+                _bossStateMachine.ChangeState(_bossStateMachine.Laser);
+            }
         }
     }
 }

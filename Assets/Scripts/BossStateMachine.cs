@@ -9,6 +9,7 @@ public class BossStateMachine : StateMachine
     public BossMoveCircleState MoveCircle { get; private set; }
     public BossMoveBurrowState MoveBurrow { get; private set; }
     public BossLaserState Laser { get; private set; }
+    public BossBulletState Bullets { get; private set; }
 
     [Header("Required References")]
     [SerializeField] Rigidbody _rb = null;
@@ -27,6 +28,7 @@ public class BossStateMachine : StateMachine
         MoveCircle = new BossMoveCircleState(this, _rb);
         MoveBurrow = new BossMoveBurrowState(this, _rb);
         Laser = new BossLaserState(this, _rb);
+        Bullets = new BossBulletState(this, _rb, _player);
     }
 
     private void Start()

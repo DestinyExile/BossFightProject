@@ -1,14 +1,22 @@
 ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
+    - BossBulletAttack
+    - BossBulletState
+    - BossController
+    - BossLaserAttack
+    - BossLaserState
     - BossMoveBurrowState
     - BossMoveCircleState
     - BossMoveHorizontalState
     - BossStateMachine
     - BossStationaryState
+    - Bullet
     - Enemy
     - GameController
     - Health
+    - HealthBar
+    - Laser
     - Missile
     - Player
     - TankController
@@ -28,6 +36,8 @@ ScriptsOnlyBuild:
     - UnityEngine.EventSystems.StandaloneInputModule
     - UnityEngine.UI.CanvasScaler
     - UnityEngine.UI.GraphicRaycaster
+    - UnityEngine.UI.Image
+    - UnityEngine.UI.Slider
     - UnityEngine.UI.Text
   serializedClasses:
     Unity.TextMeshPro:
@@ -52,8 +62,13 @@ ScriptsOnlyBuild:
     - UnityEngine.TextCore.GlyphMetrics
     - UnityEngine.TextCore.GlyphRect
     UnityEngine.UI:
+    - UnityEngine.UI.AnimationTriggers
+    - UnityEngine.UI.ColorBlock
     - UnityEngine.UI.FontData
     - UnityEngine.UI.MaskableGraphic/CullStateChangedEvent
+    - UnityEngine.UI.Navigation
+    - UnityEngine.UI.Slider/SliderEvent
+    - UnityEngine.UI.SpriteState
   methodsToPreserve: []
   sceneClasses:
     Assets/Scenes/Main.unity:
@@ -92,50 +107,72 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
+      Script: {instanceID: 1584}
+    - Class: 114
       Script: {instanceID: 1684}
     - Class: 114
       Script: {instanceID: 2204}
     - Class: 114
       Script: {instanceID: 2458}
     - Class: 114
-      Script: {instanceID: 2640}
+      Script: {instanceID: 2630}
     - Class: 114
-      Script: {instanceID: 2864}
+      Script: {instanceID: 2642}
     - Class: 114
-      Script: {instanceID: 4234}
+      Script: {instanceID: 2720}
     - Class: 114
-      Script: {instanceID: 4370}
+      Script: {instanceID: 2868}
     - Class: 114
-      Script: {instanceID: 4506}
+      Script: {instanceID: 3692}
     - Class: 114
-      Script: {instanceID: 4866}
+      Script: {instanceID: 4240}
     - Class: 114
-      Script: {instanceID: 5040}
+      Script: {instanceID: 4376}
     - Class: 114
-      Script: {instanceID: 5100}
+      Script: {instanceID: 4512}
     - Class: 114
-      Script: {instanceID: 5280}
+      Script: {instanceID: 4872}
     - Class: 114
-      Script: {instanceID: 5556}
+      Script: {instanceID: 5046}
     - Class: 114
-      Script: {instanceID: 5886}
+      Script: {instanceID: 5106}
     - Class: 114
-      Script: {instanceID: 6382}
+      Script: {instanceID: 5196}
     - Class: 114
-      Script: {instanceID: 6580}
+      Script: {instanceID: 5286}
     - Class: 114
-      Script: {instanceID: 6764}
+      Script: {instanceID: 5404}
     - Class: 114
-      Script: {instanceID: 6984}
+      Script: {instanceID: 5564}
     - Class: 114
-      Script: {instanceID: 7468}
+      Script: {instanceID: 5894}
     - Class: 114
-      Script: {instanceID: 7878}
+      Script: {instanceID: 6390}
+    - Class: 114
+      Script: {instanceID: 6588}
+    - Class: 114
+      Script: {instanceID: 6772}
+    - Class: 114
+      Script: {instanceID: 6992}
+    - Class: 114
+      Script: {instanceID: 7476}
+    - Class: 114
+      Script: {instanceID: 7886}
+    - Class: 114
+      Script: {instanceID: 8118}
+    - Class: 114
+      Script: {instanceID: 23508}
+    - Class: 114
+      Script: {instanceID: 23542}
+    - Class: 114
+      Script: {instanceID: 26878}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
       Script: {instanceID: 0}
     - Class: 135
+      Script: {instanceID: 0}
+    - Class: 136
       Script: {instanceID: 0}
     - Class: 157
       Script: {instanceID: 0}
@@ -256,7 +293,7 @@ ScriptsOnlyBuild:
     className: RawImage
   - hash:
       serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+      Hash: 66134e84ee4a24cc728f40091473d9f4
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Player
@@ -266,6 +303,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualScripting.Core.dll
     namespaceName: Unity.VisualScripting
     className: UnityOnBecameVisibleMessageListener
+  - hash:
+      serializedVersion: 2
+      Hash: 023e4052f6b5b8b1a823a38287c90484
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Laser
   - hash:
       serializedVersion: 2
       Hash: cc4274b586df3c02688bac01b88bd16c
@@ -302,6 +345,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualScripting.Core.dll
     namespaceName: Unity.VisualScripting
     className: UnityMessageListener
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: BossLaserState
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
@@ -458,6 +507,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualScripting.Core.dll
     namespaceName: Unity.VisualScripting
     className: UnityOnCollisionExit2DMessageListener
+  - hash:
+      serializedVersion: 2
+      Hash: 66134e84ee4a24cc728f40091473d9f4
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: BossController
   - hash:
       serializedVersion: 2
       Hash: 2574ac7d50617d23cdefe4ad22f5e1ad
@@ -622,7 +677,7 @@ ScriptsOnlyBuild:
     className: AnimationPlayableAsset
   - hash:
       serializedVersion: 2
-      Hash: b7427e67c3f1d8c9d2eee15e75b3e233
+      Hash: 5bd34b770fa637be0a7ace295af13ad8
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Health
@@ -674,6 +729,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
     className: TMP_FontAsset
+  - hash:
+      serializedVersion: 2
+      Hash: 890895da721fcae149fb8910f6a54954
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: HealthBar
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
@@ -796,7 +857,7 @@ ScriptsOnlyBuild:
     className: Outline
   - hash:
       serializedVersion: 2
-      Hash: 40c0c7b4d5c1f6c7d0d56fc9355eba19
+      Hash: 116bd15f79b77b1f95b5c4c77bd2f92a
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: BossStateMachine
@@ -964,6 +1025,12 @@ ScriptsOnlyBuild:
     className: TMP_ScrollbarEventHandler
   - hash:
       serializedVersion: 2
+      Hash: 4f74a286644e305702b3df73c6e2ac42
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: BossLaserAttack
+  - hash:
+      serializedVersion: 2
       Hash: 8220b46879dc5e37db1b940c938f5744
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
@@ -992,7 +1059,25 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualScripting.Core.dll
     namespaceName: Unity.VisualScripting
     className: UnityOnSliderValueChangedMessageListener
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: BossBulletState
+  - hash:
+      serializedVersion: 2
+      Hash: d84730c95714325f122f6137cd10fb0d
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Bullet
+  - hash:
+      serializedVersion: 2
+      Hash: bff4208b63f77dc52443fdb224b21522
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: BossBulletAttack
   platform: 19
   scenePathNames:
   - Assets/Scenes/Main.unity
-  playerPath: D:/Unity Projects/BossFightProject/Builds/BossFightProject.exe
+  playerPath: D:/Unity Projects/BossFightProject/Builds/Final Build/BossFightProject.exe

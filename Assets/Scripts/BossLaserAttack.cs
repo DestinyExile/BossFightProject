@@ -9,6 +9,7 @@ public class BossLaserAttack : MonoBehaviour
     [SerializeField] GameObject Laser;
     [SerializeField] Rigidbody _rb;
     [SerializeField] Player _player;
+    [SerializeField] AudioClip _shootSound;
 
     private int _numOfAttacks;
     private bool attackFinished = false;
@@ -38,6 +39,10 @@ public class BossLaserAttack : MonoBehaviour
 
             LaserMarker.SetActive(false);
             Laser.SetActive(true);
+            if(_shootSound != null)
+            {
+                AudioHelper.PlayClip2D(_shootSound, 1f);
+            }
 
             while (laserDuration > 0)
             {
